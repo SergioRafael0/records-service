@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2" author="sergio">
+
+        <createTable tableName="anotacion">
+
+            <column name="id_anotacion" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="id_estudiante" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="id_docente" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="fecha" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="tipo_anotacion" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="descripcion" type="VARCHAR(500)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

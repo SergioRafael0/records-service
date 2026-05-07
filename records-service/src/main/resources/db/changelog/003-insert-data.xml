@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="3" author="sergio">
+
+        <insert tableName="asistencia">
+            <column name="id_estudiante" valueNumeric="1"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="id_curso" valueNumeric="101"/>
+            <column name="fecha" valueDate="2025-09-22"/>
+            <column name="estado_asistencia" value="PRESENTE"/>
+            <column name="observacion" value="Sin observaciones"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="1"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="fecha" valueDate="2025-09-22"/>
+            <column name="tipo_anotacion" value="POSITIVA"/>
+            <column name="descripcion" value="Participación destacada en clase"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
