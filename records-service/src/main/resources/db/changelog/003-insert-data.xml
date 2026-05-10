@@ -18,12 +18,83 @@
             <column name="observacion" value="Sin observaciones"/>
         </insert>
 
+        <insert tableName="asistencia">
+            <column name="id_estudiante" valueNumeric="2"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="id_curso" valueNumeric="101"/>
+            <column name="fecha" valueDate="2025-09-22"/>
+            <column name="estado_asistencia" value="PRESENTE"/>
+            <column name="observacion" value=""/>
+        </insert>
+
+        <insert tableName="asistencia">
+            <column name="id_estudiante" valueNumeric="3"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="id_curso" valueNumeric="101"/>
+            <column name="fecha" valueDate="2025-09-22"/>
+            <column name="estado_asistencia" value="AUSENTE"/>
+            <column name="observacion" value="Sin justificar"/>
+        </insert>
+
+        <insert tableName="asistencia">
+            <column name="id_estudiante" valueNumeric="1"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="id_curso" valueNumeric="101"/>
+            <column name="fecha" valueDate="2025-09-23"/>
+            <column name="estado_asistencia" value="ATRASADO"/>
+            <column name="observacion" value="Llegó 10 minutos tarde"/>
+        </insert>
+
+        <insert tableName="asistencia">
+            <column name="id_estudiante" valueNumeric="2"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="id_curso" valueNumeric="101"/>
+            <column name="fecha" valueDate="2025-09-23"/>
+            <column name="estado_asistencia" value="PRESENTE"/>
+            <column name="observacion" value=""/>
+        </insert>
+
+        <insert tableName="asistencia">
+            <column name="id_estudiante" valueNumeric="4"/>
+            <column name="id_docente" valueNumeric="11"/>
+            <column name="id_curso" valueNumeric="102"/>
+            <column name="fecha" valueDate="2025-09-24"/>
+            <column name="estado_asistencia" value="JUSTIFICADO"/>
+            <column name="observacion" value="Presentó certificado médico"/>
+        </insert>
+
+        <insert tableName="asistencia">
+            <column name="id_estudiante" valueNumeric="5"/>
+            <column name="id_docente" valueNumeric="11"/>
+            <column name="id_curso" valueNumeric="102"/>
+            <column name="fecha" valueDate="2025-09-24"/>
+            <column name="estado_asistencia" value="PRESENTE"/>
+            <column name="observacion" value=""/>
+        </insert>
+
+        <insert tableName="asistencia">
+            <column name="id_estudiante" valueNumeric="1"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="id_curso" valueNumeric="101"/>
+            <column name="fecha" valueDate="2025-09-25"/>
+            <column name="estado_asistencia" value="PRESENTE"/>
+            <column name="observacion" value="Buena participación"/>
+        </insert>
+
         <insert tableName="anotacion">
             <column name="id_estudiante" valueNumeric="1"/>
             <column name="id_docente" valueNumeric="10"/>
             <column name="fecha" valueDate="2025-09-22"/>
             <column name="tipo_anotacion" value="POSITIVA"/>
             <column name="descripcion" value="Participación destacada en clase"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="3"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="fecha" valueDate="2025-09-22"/>
+            <column name="tipo_anotacion" value="NEGATIVA"/>
+            <column name="descripcion" value="Interrumpió la clase reiteradamente"/>
         </insert>
 
     </changeSet>
