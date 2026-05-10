@@ -97,6 +97,70 @@
             <column name="descripcion" value="Interrumpió la clase reiteradamente"/>
         </insert>
 
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="2"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="fecha" valueDate="2025-09-23"/>
+            <column name="tipo_anotacion" value="OBSERVACION"/>
+            <column name="descripcion" value="Debe mejorar su comportamiento en clases"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="4"/>
+            <column name="id_docente" valueNumeric="11"/>
+            <column name="fecha" valueDate="2025-09-24"/>
+            <column name="tipo_anotacion" value="POSITIVA"/>
+            <column name="descripcion" value="Ayudó a un compañero con la tarea"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="5"/>
+            <column name="id_docente" valueNumeric="11"/>
+            <column name="fecha" valueDate="2025-09-24"/>
+            <column name="tipo_anotacion" value="OBSERVACION"/>
+            <column name="descripcion" value="Olvidó traer el libro de texto"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="1"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="fecha" valueDate="2025-09-25"/>
+            <column name="tipo_anotacion" value="POSITIVA"/>
+            <column name="descripcion" value="Entregó tarea antes de lo requerido"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="3"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="fecha" valueDate="2025-09-25"/>
+            <column name="tipo_anotacion" value="NEGATIVA"/>
+            <column name="descripcion" value="No realizó la tarea asignada"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="2"/>
+            <column name="id_docente" valueNumeric="10"/>
+            <column name="fecha" valueDate="2025-09-26"/>
+            <column name="tipo_anotacion" value="POSITIVA"/>
+            <column name="descripcion" value="Excelente desempeño en exposición oral"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="6"/>
+            <column name="id_docente" valueNumeric="12"/>
+            <column name="fecha" valueDate="2025-09-26"/>
+            <column name="tipo_anotacion" value="OBSERVACION"/>
+            <column name="descripcion" value="Conversación excesiva durante la explicación"/>
+        </insert>
+
+        <insert tableName="anotacion">
+            <column name="id_estudiante" valueNumeric="4"/>
+            <column name="id_docente" valueNumeric="11"/>
+            <column name="fecha" valueDate="2025-09-27"/>
+            <column name="tipo_anotacion" value="POSITIVA"/>
+            <column name="descripcion" value="Lideró trabajo en equipo de forma ejemplar"/>
+        </insert>
+
     </changeSet>
 
 </databaseChangeLog>
