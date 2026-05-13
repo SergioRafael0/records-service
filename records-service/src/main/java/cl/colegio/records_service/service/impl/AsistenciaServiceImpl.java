@@ -1,9 +1,12 @@
 package cl.colegio.records_service.service.impl;
 
+import cl.colegio.records_service.client.UserServiceClient;
 import cl.colegio.records_service.dto.AsistenciaRequestDTO;
 import cl.colegio.records_service.dto.AsistenciaResponseDTO;
 import cl.colegio.records_service.entity.Asistencia;
+import cl.colegio.records_service.enums.EstadoAsistencia;
 import cl.colegio.records_service.exception.ResourceNotFoundException;
+import cl.colegio.records_service.exception.BusinessRuleException;
 import cl.colegio.records_service.factory.AsistenciaFactory;
 import cl.colegio.records_service.mapper.AsistenciaMapper;
 import cl.colegio.records_service.repository.AsistenciaRepository;
@@ -22,6 +25,7 @@ public class AsistenciaServiceImpl implements AsistenciaService {
     private final AsistenciaRepository asistenciaRepository;
     private final AsistenciaFactory asistenciaFactory;
     private final AsistenciaMapper asistenciaMapper;
+    private final UserServiceClient userServiceClient;
 
     @Override
     public List<AsistenciaResponseDTO> obtenerTodas() {
@@ -37,6 +41,15 @@ public class AsistenciaServiceImpl implements AsistenciaService {
 
     @Override
     public AsistenciaResponseDTO crear(AsistenciaRequestDTO dto) {
+        if (!EstadoAsistencia.esValido(dto.estadoAsistencia())) {
+            throw new BusinessRuleException(EstadoAsistencia.getMensajeError());
+        }
+        if (!userServiceClient.estudianteExists(dto.idEstudiante())) {
+            throw new ResourceNotFoundException("El estudiante con ID " + dto.idEstudiante() + " no existe en el sistema.");
+        }
+        if (!userServiceClient.docenteExists(dto.idDocente())) {
+            throw new ResourceNotFoundException("El docente con ID " + dto.idDocente() + " no existe en el sistema.");
+        }
         Asistencia asistencia = asistenciaFactory.crearDesdeRequest(dto);
         Asistencia guardada = asistenciaRepository.save(asistencia);
         return asistenciaMapper.toResponseDTO(guardada);
@@ -44,6 +57,15 @@ public class AsistenciaServiceImpl implements AsistenciaService {
 
     @Override
     public AsistenciaResponseDTO actualizar(Long id, AsistenciaRequestDTO dto) {
+        if (!EstadoAsistencia.esValido(dto.estadoAsistencia())) {
+            throw new BusinessRuleException(EstadoAsistencia.getMensajeError());
+        }
+        if (!userServiceClient.estudianteExists(dto.idEstudiante())) {
+            throw new ResourceNotFoundException("El estudiante con ID " + dto.idEstudiante() + " no existe en el sistema.");
+        }
+        if (!userServiceClient.docenteExists(dto.idDocente())) {
+            throw new ResourceNotFoundException("El docente con ID " + dto.idDocente() + " no existe en el sistema.");
+        }
         Asistencia asistencia = asistenciaRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Asistencia no encontrada con ID: " + id));
         asistenciaFactory.actualizarDesdeRequest(asistencia, dto);
