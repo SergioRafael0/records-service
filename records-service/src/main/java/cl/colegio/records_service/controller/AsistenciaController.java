@@ -59,4 +59,9 @@ public class AsistenciaController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fin) {
         return ResponseEntity.ok(asistenciaService.buscarPorFecha(inicio, fin));
     }
+
+    @GetMapping("/docente/{idDocente}")
+    public ResponseEntity<List<AsistenciaResponseDTO>> buscarPorDocente(@PathVariable Long idDocente) {
+        return ResponseEntity.ok(asistenciaService.buscarPorDocente(idDocente));
+    }
 }

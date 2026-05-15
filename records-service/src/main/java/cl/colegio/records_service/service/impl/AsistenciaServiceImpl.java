@@ -90,4 +90,9 @@ public class AsistenciaServiceImpl implements AsistenciaService {
     public List<AsistenciaResponseDTO> buscarPorFecha(LocalDate inicio, LocalDate fin) {
         return asistenciaMapper.toResponseList(asistenciaRepository.findByFechaBetween(inicio, fin));
     }
+
+    @Override
+    public List<AsistenciaResponseDTO> buscarPorDocente(Long idDocente) {
+        return asistenciaMapper.toResponseList(asistenciaRepository.findByIdDocente(idDocente));
+    }
 }

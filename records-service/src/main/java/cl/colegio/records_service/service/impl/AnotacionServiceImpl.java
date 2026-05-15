@@ -89,4 +89,9 @@ public class AnotacionServiceImpl implements AnotacionService {
     public List<AnotacionResponseDTO> buscarPorEstudiante(Long idEstudiante) {
         return anotacionMapper.toResponseList(anotacionRepository.findByIdEstudiante(idEstudiante));
     }
+
+    @Override
+    public List<AnotacionResponseDTO> buscarPorDocente(Long idDocente) {
+        return anotacionMapper.toResponseList(anotacionRepository.findByIdDocente(idDocente));
+    }
 }

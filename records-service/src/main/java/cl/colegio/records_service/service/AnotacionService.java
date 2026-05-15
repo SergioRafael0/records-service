@@ -20,4 +20,6 @@ public interface AnotacionService {
     List<AnotacionResponseDTO> buscarPorTipo(String tipo);
 
     List<AnotacionResponseDTO> buscarPorEstudiante(Long idEstudiante);
+
+    List<AnotacionResponseDTO> buscarPorDocente(Long idDocente);
 }

@@ -22,4 +22,6 @@ public interface AsistenciaService {
     List<AsistenciaResponseDTO> buscarPorEstado(String estado);
 
     List<AsistenciaResponseDTO> buscarPorFecha(LocalDate inicio, LocalDate fin);
+
+    List<AsistenciaResponseDTO> buscarPorDocente(Long idDocente);
 }

@@ -55,4 +55,9 @@ public class AnotacionController {
     public ResponseEntity<List<AnotacionResponseDTO>> buscarPorEstudiante(@PathVariable Long idEstudiante) {
         return ResponseEntity.ok(anotacionService.buscarPorEstudiante(idEstudiante));
     }
+
+    @GetMapping("/docente/{idDocente}")
+    public ResponseEntity<List<AnotacionResponseDTO>> buscarPorDocente(@PathVariable Long idDocente) {
+        return ResponseEntity.ok(anotacionService.buscarPorDocente(idDocente));
+    }
 }
