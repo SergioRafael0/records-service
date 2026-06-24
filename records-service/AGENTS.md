@@ -816,9 +816,27 @@ Luego se agregan mejoras como validaciones, Swagger, Docker Compose, API Gateway
 
 ````
 
-Ahora sí, después de reemplazar el `AGENTS.md`, puedes hacer otro commit pequeño:
+## Tests
 
+**~92 tests**, 13 archivos en `src/test/java/`:
+
+| Archivo | Tests | Tipo |
+|---------|-------|------|
+| `AnotacionServiceImplTest` | ~13 | Unitario (Mockito) |
+| `AsistenciaServiceImplTest` | ~14 | Unitario (Mockito) |
+| `AnotacionControllerTest` | ~8 | `@WebMvcTest` |
+| `AsistenciaControllerTest` | ~9 | `@WebMvcTest` |
+| `AnotacionFactoryTest` | 6 | Unitario |
+| `AsistenciaFactoryTest` | 6 | Unitario |
+| `AnotacionMapperTest` | 8 | Unitario |
+| `AsistenciaMapperTest` | 8 | Unitario |
+| `EstadoAsistenciaTest` | 4 | Unitario |
+| `TipoAnotacionTest` | 3 | Unitario |
+| `GlobalExceptionHandlerTest` | 5 | Unitario (Mockito) |
+| `UserServiceClientTest` | 6 | Unitario (Mockito) |
+| `RecordsServiceApplicationTests` | 1 (error esperado) | Smoke (`@SpringBootTest`) |
+
+**Ejecución:**
 ```bash
-git add AGENTS.md
-git commit -m "Update agent instructions with Factory Pattern"
+./mvnw test   # ~92 tests
 ````
