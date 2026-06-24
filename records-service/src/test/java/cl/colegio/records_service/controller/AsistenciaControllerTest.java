@@ -98,7 +98,7 @@ class AsistenciaControllerTest {
     @Test
     @WithMockUser(roles = "ADMIN")
     void actualizar_returns200() throws Exception {
-        var request = new AsistenciaRequestDTO(10L, 20L, 30L, LocalDate.of(2026, 7, 1), "AUSENTE", "Actualizada");
+        var request = new AsistenciaRequestDTO(10L, 20L, 30L, LocalDate.of(2026, 6, 23), "AUSENTE", "Actualizada");
         when(asistenciaService.actualizar(eq(1L), any())).thenReturn(dtoResponse);
 
         mockMvc.perform(put("/api/v1/asistencias/1")

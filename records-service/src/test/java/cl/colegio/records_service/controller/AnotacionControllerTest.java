@@ -98,7 +98,7 @@ class AnotacionControllerTest {
     @Test
     @WithMockUser(roles = "ADMIN")
     void actualizar_returns200() throws Exception {
-        var request = new AnotacionRequestDTO(10L, 20L, LocalDate.of(2026, 7, 1), "NEGATIVA", "Actualizada");
+        var request = new AnotacionRequestDTO(10L, 20L, LocalDate.of(2026, 6, 23), "NEGATIVA", "Actualizada");
         when(anotacionService.actualizar(eq(1L), any())).thenReturn(dtoResponse);
 
         mockMvc.perform(put("/api/v1/anotaciones/1")
